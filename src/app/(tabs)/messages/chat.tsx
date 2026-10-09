@@ -16,6 +16,10 @@ export default function Chat() {
           style={styles.avatar}
         />
         <Text style={styles.title}>Chat</Text>
+        <View style={styles.icons}>
+          <Ionicons name="call-outline" size={24} />
+          <Ionicons name="videocam-outline" size={26} />
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -39,5 +43,11 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  icons: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 16,
+    marginLeft: "auto",
   },
 });
