@@ -1,17 +1,19 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView } from "react-native";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
+import MessageList from "../../../components/MessageList";
+import MessageSearch from "../../../components/MessageSearch";
+import MessagesHeader from "../../../components/MessagesHeader";
 
-export default function Messages() {
+export default function Index() {
   return (
-    <View style={styles.container}>
-      <Text>Messages</Text>
-    </View>
+    <SafeAreaProvider>
+      <SafeAreaView>
+        <ScrollView>
+          <MessagesHeader />
+          <MessageSearch />
+          <MessageList />
+        </ScrollView>
+      </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});

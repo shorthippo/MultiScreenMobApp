@@ -57,6 +57,8 @@ Join our community of developers creating universal apps.
 
 Contributions:
 
+Used Claude AI for some code debugging and to help with error explanations
+
 Pexels:
 
 Photo by Simon Robben: https://www.pexels.com/photo/man-in-brown-polo-shirt-614810/
