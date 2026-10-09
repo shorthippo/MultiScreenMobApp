@@ -1,4 +1,6 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { useRouter } from "expo-router";
+
+import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
 const messages = [
   {
@@ -46,10 +48,15 @@ const messages = [
 ];
 
 export default function MessageList() {
+  const router = useRouter();
   return (
     <View>
       {messages.map((message) => (
-        <View key={message.id} style={styles.row}>
+        <Pressable
+          key={message.id}
+          style={styles.row}
+          onPress={() => router.push({ pathname: "/messages/chat" })}
+        >
           <Image source={message.image} style={styles.avatar} />
           <View style={styles.content}>
             <Text style={styles.name}>{message.name}</Text>
@@ -57,7 +64,7 @@ export default function MessageList() {
               {message.text} · {message.time}
             </Text>
           </View>
-        </View>
+        </Pressable>
       ))}
     </View>
   );
